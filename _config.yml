@@ -1,0 +1,21 @@
+title: Memo2 - Grupo 9
+description: Sitio web del grupo 9 para Memo2
+baseurl: "" 
+url: "https://memo2-2025-1c-group9.github.io/" 
+
+theme: minima
+
+author:
+  name: Grupo 9
+  email: lautaro.fran@gmail.com
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+nav:
+  - title: Inicio
+    url: /
+  - title: template-service
+    url: /template-python
+  - title: template-node
+    url: /template-node
