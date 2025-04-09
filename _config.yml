@@ -5,9 +5,6 @@ url: "https://memo2-2025-1c-group9.github.io/"
 
 theme: minima
 
-author:
-  name: Grupo 9
-  email: lautaro.fran@gmail.com
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
