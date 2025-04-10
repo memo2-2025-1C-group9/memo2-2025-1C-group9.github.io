@@ -11,7 +11,7 @@ Somos el Grupo 9 de Memo2.
 - [Coverage Report](/coverages/template-service-python/index.html)
 
 ### Template Service Node
-- [Coverage Report](/coverages/template-service-js/index.html)
+- [Coverage Report](/coverages/template-service-js/lcov-report/index.html)
 
 ### User Auth Service
 - [Coverage Report](/coverages/user-auth/index.html)
