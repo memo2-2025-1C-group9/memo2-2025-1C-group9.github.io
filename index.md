@@ -15,3 +15,6 @@ Somos el Grupo 9 de Memo2.
 
 ### User Auth Service
 - [Coverage Report](/coverages/user-auth/index.html)
+
+### Node Backoffice
+- [Coverage Report](coverages/node-backoffice/lcov-report/index.html)
