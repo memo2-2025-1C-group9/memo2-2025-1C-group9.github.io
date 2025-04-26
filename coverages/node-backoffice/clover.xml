@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745683985021" clover="3.2.0">
-  <project timestamp="1745683985021" name="All files">
-    <metrics statements="79" coveredstatements="72" conditionals="15" coveredconditionals="9" methods="10" coveredmethods="8" elements="104" coveredelements="89" complexity="0" loc="79" ncloc="79" packages="5" files="5" classes="5"/>
-    <package name="app">
-      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+<coverage generated="1745685985613" clover="3.2.0">
+  <project timestamp="1745685985613" name="All files">
+    <metrics statements="87" coveredstatements="80" conditionals="15" coveredconditionals="9" methods="10" coveredmethods="8" elements="112" coveredelements="97" complexity="0" loc="87" ncloc="87" packages="6" files="6" classes="6"/>
+    <package name="node-backoffice">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="swagger.js" path="/home/runner/work/node-backoffice/node-backoffice/swagger.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="node-backoffice.app">
+      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.js" path="/home/runner/work/node-backoffice/node-backoffice/app/app.js">
-        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
         <line num="3" count="5" type="stmt"/>
         <line num="4" count="5" type="stmt"/>
         <line num="5" count="5" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="15" count="5" type="stmt"/>
-        <line num="17" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
         <line num="19" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
       </file>
     </package>
-    <package name="app.controllers">
+    <package name="node-backoffice.app.controllers">
       <metrics statements="39" coveredstatements="38" conditionals="8" coveredconditionals="7" methods="5" coveredmethods="5"/>
       <file name="admin_controller.js" path="/home/runner/work/node-backoffice/node-backoffice/app/controllers/admin_controller.js">
         <metrics statements="39" coveredstatements="38" conditionals="8" coveredconditionals="7" methods="5" coveredmethods="5"/>
@@ -63,7 +77,7 @@
         <line num="92" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="app.middlewares">
+    <package name="node-backoffice.app.middlewares">
       <metrics statements="13" coveredstatements="8" conditionals="6" coveredconditionals="2" methods="2" coveredmethods="1"/>
       <file name="verifyToken.js" path="/home/runner/work/node-backoffice/node-backoffice/app/middlewares/verifyToken.js">
         <metrics statements="13" coveredstatements="8" conditionals="6" coveredconditionals="2" methods="2" coveredmethods="1"/>
@@ -82,7 +96,7 @@
         <line num="22" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="app.models">
+    <package name="node-backoffice.app.models">
       <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="admin.js" path="/home/runner/work/node-backoffice/node-backoffice/app/models/admin.js">
         <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -94,7 +108,7 @@
         <line num="18" count="3" type="stmt"/>
       </file>
     </package>
-    <package name="app.routes">
+    <package name="node-backoffice.app.routes">
       <metrics statements="11" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="admin_routes.js" path="/home/runner/work/node-backoffice/node-backoffice/app/routes/admin_routes.js">
         <metrics statements="11" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -102,13 +116,13 @@
         <line num="2" count="5" type="stmt"/>
         <line num="3" count="5" type="stmt"/>
         <line num="4" count="5" type="stmt"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="10" count="5" type="stmt"/>
-        <line num="11" count="5" type="stmt"/>
-        <line num="12" count="5" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="30" count="5" type="stmt"/>
+        <line num="51" count="5" type="stmt"/>
+        <line num="75" count="5" type="stmt"/>
+        <line num="103" count="5" type="stmt"/>
+        <line num="105" count="5" type="stmt"/>
       </file>
     </package>
   </project>
