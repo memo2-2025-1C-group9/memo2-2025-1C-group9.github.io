@@ -18,3 +18,6 @@ Somos el Grupo 9 de Memo2.
 
 ### Node Backoffice
 - [Coverage Report](coverages/node-backoffice/lcov-report/index.html)
+  
+### Course Management Service
+- [Coverage Report](coverages/course-management/index.html)
