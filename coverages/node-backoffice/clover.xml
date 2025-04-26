@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745685985613" clover="3.2.0">
-  <project timestamp="1745685985613" name="All files">
-    <metrics statements="87" coveredstatements="80" conditionals="15" coveredconditionals="9" methods="10" coveredmethods="8" elements="112" coveredelements="97" complexity="0" loc="87" ncloc="87" packages="6" files="6" classes="6"/>
+<coverage generated="1745698444888" clover="3.2.0">
+  <project timestamp="1745698444888" name="All files">
+    <metrics statements="88" coveredstatements="81" conditionals="15" coveredconditionals="9" methods="10" coveredmethods="8" elements="113" coveredelements="98" complexity="0" loc="88" ncloc="88" packages="6" files="6" classes="6"/>
     <package name="node-backoffice">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="swagger.js" path="/home/runner/work/node-backoffice/node-backoffice/swagger.js">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="18" count="5" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
-        <line num="25" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
       </file>
     </package>
     <package name="node-backoffice.app">
