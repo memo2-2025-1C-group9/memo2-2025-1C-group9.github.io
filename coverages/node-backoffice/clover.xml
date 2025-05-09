@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1746746249923" clover="3.2.0">
-  <project timestamp="1746746249923" name="All files">
+<coverage generated="1746751150120" clover="3.2.0">
+  <project timestamp="1746751150120" name="All files">
     <metrics statements="230" coveredstatements="216" conditionals="23" coveredconditionals="16" methods="48" coveredmethods="41" elements="301" coveredelements="273" complexity="0" loc="230" ncloc="230" packages="7" files="15" classes="15"/>
     <package name="node-backoffice">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
