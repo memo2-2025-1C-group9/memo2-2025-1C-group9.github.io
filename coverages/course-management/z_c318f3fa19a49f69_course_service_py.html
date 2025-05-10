@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="index.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.8.0">coverage.py v7.8.0</a>,
-            created at 2025-05-10 17:39 +0000
+            created at 2025-05-10 23:38 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -215,11 +215,17 @@
     <p class="pln"><span class="n"><a id="t133" href="#t133">133</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t134" href="#t134">134</a></span><span class="t">        <span class="key">return</span> <span class="nam">course</span><span class="op">.</span><span class="nam">modules</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t135" href="#t135">135</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t136" href="#t136">136</a></span><span class="t">    <span class="key">async</span> <span class="key">def</span> <span class="nam">get_courses_by_owner</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">owner_id</span><span class="op">:</span> <span class="nam">int</span><span class="op">)</span> <span class="op">-></span> <span class="nam">List</span><span class="op">[</span><span class="nam">CourseModel</span><span class="op">]</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t137" href="#t137">137</a></span><span class="t">        <span class="key">return</span> <span class="key">await</span> <span class="nam">self</span><span class="op">.</span><span class="nam">repository</span><span class="op">.</span><span class="nam">get_courses_by_owner</span><span class="op">(</span><span class="nam">owner_id</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t138" href="#t138">138</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t139" href="#t139">139</a></span><span class="t">    <span class="key">async</span> <span class="key">def</span> <span class="nam">get_courses_by_enrolled_user</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">user_id</span><span class="op">:</span> <span class="nam">int</span><span class="op">)</span> <span class="op">-></span> <span class="nam">List</span><span class="op">[</span><span class="nam">CourseModel</span><span class="op">]</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t140" href="#t140">140</a></span><span class="t">        <span class="key">return</span> <span class="key">await</span> <span class="nam">self</span><span class="op">.</span><span class="nam">repository</span><span class="op">.</span><span class="nam">get_courses_by_enrolled_user</span><span class="op">(</span><span class="nam">user_id</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t136" href="#t136">136</a></span><span class="t">    <span class="key">async</span> <span class="key">def</span> <span class="nam">get_courses_by_owner</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t137" href="#t137">137</a></span><span class="t">        <span class="nam">self</span><span class="op">,</span> <span class="nam">owner_id</span><span class="op">:</span> <span class="nam">int</span><span class="op">,</span> <span class="nam">skip</span><span class="op">:</span> <span class="nam">int</span> <span class="op">=</span> <span class="num">0</span><span class="op">,</span> <span class="nam">limit</span><span class="op">:</span> <span class="nam">int</span> <span class="op">=</span> <span class="num">100</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t138" href="#t138">138</a></span><span class="t">    <span class="op">)</span> <span class="op">-></span> <span class="nam">List</span><span class="op">[</span><span class="nam">CourseModel</span><span class="op">]</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t139" href="#t139">139</a></span><span class="t">        <span class="str">"""Obtiene cursos donde el usuario es owner con soporte de paginaci&#243;n"""</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t140" href="#t140">140</a></span><span class="t">        <span class="key">return</span> <span class="key">await</span> <span class="nam">self</span><span class="op">.</span><span class="nam">repository</span><span class="op">.</span><span class="nam">get_courses_by_owner</span><span class="op">(</span><span class="nam">owner_id</span><span class="op">,</span> <span class="nam">skip</span><span class="op">,</span> <span class="nam">limit</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t141" href="#t141">141</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t142" href="#t142">142</a></span><span class="t">    <span class="key">async</span> <span class="key">def</span> <span class="nam">get_courses_by_enrolled_user</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t143" href="#t143">143</a></span><span class="t">        <span class="nam">self</span><span class="op">,</span> <span class="nam">user_id</span><span class="op">:</span> <span class="nam">int</span><span class="op">,</span> <span class="nam">skip</span><span class="op">:</span> <span class="nam">int</span> <span class="op">=</span> <span class="num">0</span><span class="op">,</span> <span class="nam">limit</span><span class="op">:</span> <span class="nam">int</span> <span class="op">=</span> <span class="num">100</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t144" href="#t144">144</a></span><span class="t">    <span class="op">)</span> <span class="op">-></span> <span class="nam">List</span><span class="op">[</span><span class="nam">CourseModel</span><span class="op">]</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t145" href="#t145">145</a></span><span class="t">        <span class="str">"""Obtiene cursos donde el usuario est&#225; inscripto con soporte de paginaci&#243;n"""</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t146" href="#t146">146</a></span><span class="t">        <span class="key">return</span> <span class="key">await</span> <span class="nam">self</span><span class="op">.</span><span class="nam">repository</span><span class="op">.</span><span class="nam">get_courses_by_enrolled_user</span><span class="op">(</span><span class="nam">user_id</span><span class="op">,</span> <span class="nam">skip</span><span class="op">,</span> <span class="nam">limit</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
     <div class="content">
@@ -229,7 +235,7 @@
             <a class="nav" href="index.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.8.0">coverage.py v7.8.0</a>,
-            created at 2025-05-10 17:39 +0000
+            created at 2025-05-10 23:38 +0000
         </p>
     </div>
 </footer>
