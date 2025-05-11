@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="z_cfb6adc3f81c8e3c_router_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.8.0">coverage.py v7.8.0</a>,
-            created at 2025-05-10 23:38 +0000
+            created at 2025-05-11 20:00 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -297,24 +297,16 @@
     <p class="pln"><span class="n"><a id="t215" href="#t215">215</a></span><span class="t">    <span class="nam">limit</span><span class="op">:</span> <span class="nam">int</span> <span class="op">=</span> <span class="nam">Query</span><span class="op">(</span><span class="nam">default</span><span class="op">=</span><span class="num">100</span><span class="op">,</span> <span class="nam">ge</span><span class="op">=</span><span class="num">1</span><span class="op">)</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t216" href="#t216">216</a></span><span class="t">    <span class="nam">service</span><span class="op">:</span> <span class="nam">CourseService</span> <span class="op">=</span> <span class="nam">Depends</span><span class="op">(</span><span class="nam">get_course_service</span><span class="op">)</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t217" href="#t217">217</a></span><span class="t"><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t218" href="#t218">218</a></span><span class="t">    <span class="str">"""Obtiene los cursos relacionados con un usuario.</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t219" href="#t219">219</a></span><span class="t"><span class="str">    Si el usuario es docente, devuelve los cursos donde es owner.</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t220" href="#t220">220</a></span><span class="t"><span class="str">    Si el usuario no es docente, devuelve los cursos donde est&#225; inscripto.</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t221" href="#t221">221</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t222" href="#t222">222</a></span><span class="t"><span class="str">    Par&#225;metros:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t223" href="#t223">223</a></span><span class="t"><span class="str">    - user_id: ID del usuario</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t224" href="#t224">224</a></span><span class="t"><span class="str">    - skip: Cantidad de registros a omitir para paginaci&#243;n (por defecto 0)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t225" href="#t225">225</a></span><span class="t"><span class="str">    - limit: Cantidad m&#225;xima de registros a devolver (por defecto 100)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t226" href="#t226">226</a></span><span class="t"><span class="str">    """</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t227" href="#t227">227</a></span><span class="t">    <span class="key">try</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t228" href="#t228">228</a></span><span class="t">        <span class="nam">is_teacher</span> <span class="op">=</span> <span class="key">await</span> <span class="nam">service</span><span class="op">.</span><span class="nam">is_user_teacher</span><span class="op">(</span><span class="nam">user_id</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t229" href="#t229">229</a></span><span class="t">        <span class="key">if</span> <span class="nam">is_teacher</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t230" href="#t230">230</a></span><span class="t">            <span class="key">return</span> <span class="key">await</span> <span class="nam">service</span><span class="op">.</span><span class="nam">get_courses_by_owner</span><span class="op">(</span><span class="nam">user_id</span><span class="op">,</span> <span class="nam">skip</span><span class="op">,</span> <span class="nam">limit</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t231" href="#t231">231</a></span><span class="t">        <span class="key">else</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t232" href="#t232">232</a></span><span class="t">            <span class="key">return</span> <span class="key">await</span> <span class="nam">service</span><span class="op">.</span><span class="nam">get_courses_by_enrolled_user</span><span class="op">(</span><span class="nam">user_id</span><span class="op">,</span> <span class="nam">skip</span><span class="op">,</span> <span class="nam">limit</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t233" href="#t233">233</a></span><span class="t">    <span class="key">except</span> <span class="nam">Exception</span> <span class="key">as</span> <span class="nam">e</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t234" href="#t234">234</a></span><span class="t">        <span class="nam">logger</span><span class="op">.</span><span class="nam">error</span><span class="op">(</span><span class="str">f"Error al obtener cursos del usuario: {str(e)}"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t235" href="#t235">235</a></span><span class="t">        <span class="key">raise</span> <span class="nam">HTTPException</span><span class="op">(</span><span class="nam">status_code</span><span class="op">=</span><span class="num">500</span><span class="op">,</span> <span class="nam">detail</span><span class="op">=</span><span class="str">"Error interno del servidor"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t218" href="#t218">218</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t219" href="#t219">219</a></span><span class="t">    <span class="key">try</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t220" href="#t220">220</a></span><span class="t">        <span class="nam">is_teacher</span> <span class="op">=</span> <span class="key">await</span> <span class="nam">service</span><span class="op">.</span><span class="nam">is_user_teacher</span><span class="op">(</span><span class="nam">user_id</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t221" href="#t221">221</a></span><span class="t">        <span class="key">if</span> <span class="nam">is_teacher</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t222" href="#t222">222</a></span><span class="t">            <span class="key">return</span> <span class="key">await</span> <span class="nam">service</span><span class="op">.</span><span class="nam">get_courses_by_owner</span><span class="op">(</span><span class="nam">user_id</span><span class="op">,</span> <span class="nam">skip</span><span class="op">,</span> <span class="nam">limit</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t223" href="#t223">223</a></span><span class="t">        <span class="key">else</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t224" href="#t224">224</a></span><span class="t">            <span class="key">return</span> <span class="key">await</span> <span class="nam">service</span><span class="op">.</span><span class="nam">get_courses_by_enrolled_user</span><span class="op">(</span><span class="nam">user_id</span><span class="op">,</span> <span class="nam">skip</span><span class="op">,</span> <span class="nam">limit</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t225" href="#t225">225</a></span><span class="t">    <span class="key">except</span> <span class="nam">Exception</span> <span class="key">as</span> <span class="nam">e</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t226" href="#t226">226</a></span><span class="t">        <span class="nam">logger</span><span class="op">.</span><span class="nam">error</span><span class="op">(</span><span class="str">f"Error al obtener cursos del usuario: {str(e)}"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t227" href="#t227">227</a></span><span class="t">        <span class="key">raise</span> <span class="nam">HTTPException</span><span class="op">(</span><span class="nam">status_code</span><span class="op">=</span><span class="num">500</span><span class="op">,</span> <span class="nam">detail</span><span class="op">=</span><span class="str">"Error interno del servidor"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
     <div class="content">
@@ -324,7 +316,7 @@
             <a class="nav" href="z_cfb6adc3f81c8e3c_router_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.8.0">coverage.py v7.8.0</a>,
-            created at 2025-05-10 23:38 +0000
+            created at 2025-05-11 20:00 +0000
         </p>
     </div>
 </footer>
