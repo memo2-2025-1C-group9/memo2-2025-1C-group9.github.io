@@ -157,7 +157,8 @@
 <a name='L92'></a><a href='#L92'>92</a>
 <a name='L93'></a><a href='#L93'>93</a>
 <a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">11x</span>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -193,6 +194,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,8 +203,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -251,7 +253,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const bcrypt = require('bcryptjs');
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const adminRepository = require('../repositories/admin_repository');
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -270,8 +272,8 @@ exports.getAdminById = async (req, res) =&gt; {
 &nbsp;
     try {
         const admin = await adminRepository.getAdminById(id);
-        if ( !admin ) {
-            return res.status(404).json({ message: 'Admin not found'});
+        if (!admin) {
+            return res.status(404).json({ message: 'Admin not found' });
         }
         return res.status(200).json({
             message: 'Admin found',
@@ -284,19 +286,20 @@ exports.getAdminById = async (req, res) =&gt; {
 &nbsp;
 exports.login = async (req, res) =&gt; {
     const { email, password } = req.body;
-&nbsp;
+    
     try {
         const admin = await adminRepository.getAdminByEmail(email);
-        <span class="missing-if-branch" title="if path not taken" >I</span>if ( !admin ) {
+        
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!admin) {
 <span class="cstat-no" title="statement not covered" >            return res.status(401).json({</span>
                 type: 'about:blank',
                 title: 'Unauthorized',
                 detail: 'Invalid credentials',
             });
         }
-&nbsp;
-        // Comparo con hashPassword
-        const isMatch = await bcrypt.compare( password, admin.password );
+        
+        const isMatch = await bcrypt.compare(password, admin.password);
+        
         if (!isMatch) {
             return res.status(401).json({
                 type: 'about:blank',
@@ -304,15 +307,15 @@ exports.login = async (req, res) =&gt; {
                 detail: 'Invalid credentials',
             });
         }
-&nbsp;
+        
         const token = jwt.sign(
             admin.toSafeAdmin(),
-            JWT_SECRET 
+            JWT_SECRET
         );
-&nbsp;
+        
         return res.status(200).json({
             message: 'Successful login',
-            token: token,
+            token,
             admin: admin.toSafeAdmin()
         });
     } catch (err) {
@@ -325,7 +328,7 @@ exports.createAdmin = async (req, res) =&gt; {
 &nbsp;
     try {
         const existingAdmin = await adminRepository.getAdminByEmail(email);
-        if ( existingAdmin ) {
+        if (existingAdmin) {
             return res.status(400).json({
                 type: 'about:blank',
                 title: 'Bad Request',
@@ -333,9 +336,9 @@ exports.createAdmin = async (req, res) =&gt; {
             });
         }
 &nbsp;
-        // Creo la hashPassoword
-        const hashedPassword = await bcrypt.hash( password, 10 );
-        const newAdmin = await adminRepository.createAdmin( email, username, hashedPassword );
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const newAdmin = await adminRepository.createAdmin(email, username, hashedPassword);
 &nbsp;
         return res.status(201).json({
             message: 'Admin created successfully',
@@ -352,7 +355,7 @@ exports.createAdmin = async (req, res) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-11T21:04:00.843Z
+                at 2025-05-11T21:40:43.501Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
