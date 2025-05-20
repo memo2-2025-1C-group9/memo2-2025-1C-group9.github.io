@@ -21,3 +21,6 @@ Somos el Grupo 9 de Memo2.
   
 ### Course Management Service
 - [Coverage Report](coverages/course-management/index.html)
+
+### Assestment Service
+- [Coverage Report](coverages/assessment-service/index.html)
