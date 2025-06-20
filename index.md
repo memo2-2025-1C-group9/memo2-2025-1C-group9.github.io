@@ -24,3 +24,9 @@ Somos el Grupo 9 de Memo2.
 
 ### Assestment Service
 - [Coverage Report](coverages/assessment-service/index.html)
+
+### Statistics Service
+- [Coverage Report](coverages/statistics-service/index.html)
+
+### Notification Service
+- [Coverage Report](coverages/notification-service/index.html)
