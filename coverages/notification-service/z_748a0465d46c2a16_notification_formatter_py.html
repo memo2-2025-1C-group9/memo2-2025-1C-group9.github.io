@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="z_748a0465d46c2a16_problem_details_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.9.1">coverage.py v7.9.1</a>,
-            created at 2025-06-22 19:11 +0000
+            created at 2025-06-22 23:15 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -120,7 +120,7 @@
     <p class="run"><span class="n"><a id="t38" href="#t38">38</a></span><span class="t"><span class="key">def</span> <span class="nam">format_add_aux_teacher</span><span class="op">(</span><span class="nam">notificacion</span><span class="op">:</span> <span class="nam">AuxiliaryTeacherNotificationEvent</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t39" href="#t39">39</a></span><span class="t">    <span class="key">return</span> <span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t40" href="#t40">40</a></span><span class="t">        <span class="str">"Bienvenido como docente auxiliar"</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t41" href="#t41">41</a></span><span class="t">        <span class="str">f"Has sido invitado como docente auxiliar al curso.\n\nPermisos otorgados:\n"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t41" href="#t41">41</a></span><span class="t">        <span class="str">f"Has sido invitado como docente auxiliar al curso: {notificacion.id_course}.\n\nPermisos otorgados:\n"</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t42" href="#t42">42</a></span><span class="t">        <span class="op">+</span> <span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t43" href="#t43">43</a></span><span class="t">            <span class="str">f"&#8226; Editar curso: {'S&#237;' if notificacion.permissions.edit_course else 'No'}\n"</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t44" href="#t44">44</a></span><span class="t">            <span class="key">if</span> <span class="nam">notificacion</span><span class="op">.</span><span class="nam">permissions</span>&nbsp;</span><span class="r"></span></p>
@@ -154,7 +154,7 @@
     <p class="run"><span class="n"><a id="t72" href="#t72">72</a></span><span class="t"><span class="key">def</span> <span class="nam">format_update_aux_teacher</span><span class="op">(</span><span class="nam">notificacion</span><span class="op">:</span> <span class="nam">AuxiliaryTeacherNotificationEvent</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t73" href="#t73">73</a></span><span class="t">    <span class="key">return</span> <span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t74" href="#t74">74</a></span><span class="t">        <span class="str">"Permisos actualizados como docente auxiliar"</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t75" href="#t75">75</a></span><span class="t">        <span class="str">f"Tus permisos como docente auxiliar han sido actualizados.\n\nNuevos permisos:\n"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t75" href="#t75">75</a></span><span class="t">        <span class="str">f"Tus permisos como docente auxiliar para el curso: {notificacion.id_course} han sido actualizados.\n\nNuevos permisos:\n"</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t76" href="#t76">76</a></span><span class="t">        <span class="op">+</span> <span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t77" href="#t77">77</a></span><span class="t">            <span class="str">f"&#8226; Editar curso: {'S&#237;' if notificacion.permissions.edit_course else 'No'}\n"</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t78" href="#t78">78</a></span><span class="t">            <span class="key">if</span> <span class="nam">notificacion</span><span class="op">.</span><span class="nam">permissions</span>&nbsp;</span><span class="r"></span></p>
@@ -203,7 +203,7 @@
     <p class="mis show_mis"><span class="n"><a id="t121" href="#t121">121</a></span><span class="t">        <span class="key">return</span> <span class="op">(</span><span class="str">"Notificaci&#243;n"</span><span class="op">,</span> <span class="str">"Evento desconocido."</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t122" href="#t122">122</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t123" href="#t123">123</a></span><span class="t">    <span class="nam">subject</span><span class="op">,</span> <span class="nam">body</span> <span class="op">=</span> <span class="nam">formatter</span><span class="op">(</span><span class="nam">data</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t124" href="#t124">124</a></span><span class="t">    <span class="key">return</span> <span class="op">(</span><span class="str">f"[{notification_type}] {subject}"</span><span class="op">,</span> <span class="nam">body</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t124" href="#t124">124</a></span><span class="t">    <span class="key">return</span> <span class="op">(</span><span class="nam">subject</span><span class="op">,</span> <span class="nam">body</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
     <div class="content">
@@ -213,7 +213,7 @@
             <a class="nav" href="z_748a0465d46c2a16_problem_details_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.9.1">coverage.py v7.9.1</a>,
-            created at 2025-06-22 19:11 +0000
+            created at 2025-06-22 23:15 +0000
         </p>
     </div>
 </footer>
