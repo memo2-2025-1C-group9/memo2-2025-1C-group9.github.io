@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Coverage for app/services/course_service.py: 83%</title>
+    <title>Coverage for app/services/course_service.py: 84%</title>
     <link rel="icon" sizes="32x32" href="favicon_32_cb_58284776.png">
     <link rel="stylesheet" href="style_cb_81f8c14c.css" type="text/css">
     <script src="coverage_html_cb_6fb7b396.js" defer></script>
@@ -12,7 +12,7 @@
     <div class="content">
         <h1>
             <span class="text">Coverage for </span><b>app/services/course_service.py</b>:
-            <span class="pc_cov">83%</span>
+            <span class="pc_cov">84%</span>
         </h1>
         <aside id="help_panel_wrapper">
             <input id="help_panel_state" type="checkbox">
@@ -54,9 +54,9 @@
             </div>
         </aside>
         <h2>
-            <span class="text">383 statements &nbsp;</span>
-            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">319<span class="text"> run</span></button>
-            <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">64<span class="text"> missing</span></button>
+            <span class="text">416 statements &nbsp;</span>
+            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">350<span class="text"> run</span></button>
+            <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">66<span class="text"> missing</span></button>
             <button type="button" class="exc show_exc button_toggle_exc" value="exc" data-shortcut="x" title="Toggle lines excluded">0<span class="text"> excluded</span></button>
         </h2>
         <p class="text">
@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="index.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.9.1">coverage.py v7.9.1</a>,
-            created at 2025-06-22 00:26 +0000
+            created at 2025-06-22 01:45 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -850,6 +850,75 @@
     <p class="pln"><span class="n"><a id="t768" href="#t768">768</a></span><span class="t">            <span class="nam">element_id</span><span class="op">=</span><span class="nam">element_id</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t769" href="#t769">769</a></span><span class="t">            <span class="nam">description</span><span class="op">=</span><span class="nam">description</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t770" href="#t770">770</a></span><span class="t">        <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t771" href="#t771">771</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t772" href="#t772">772</a></span><span class="t">    <span class="key">async</span> <span class="key">def</span> <span class="nam">update_auxiliary_teacher_permissions</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t773" href="#t773">773</a></span><span class="t">        <span class="nam">self</span><span class="op">,</span> <span class="nam">course_id</span><span class="op">:</span> <span class="nam">str</span><span class="op">,</span> <span class="nam">teacher_id</span><span class="op">:</span> <span class="nam">int</span><span class="op">,</span> <span class="nam">requester_id</span><span class="op">:</span> <span class="nam">int</span><span class="op">,</span> <span class="nam">permissions</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t774" href="#t774">774</a></span><span class="t">    <span class="op">)</span> <span class="op">-></span> <span class="nam">Optional</span><span class="op">[</span><span class="nam">CourseModel</span><span class="op">]</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t775" href="#t775">775</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t776" href="#t776">776</a></span><span class="t">        <span class="nam">course</span> <span class="op">=</span> <span class="key">await</span> <span class="nam">self</span><span class="op">.</span><span class="nam">repository</span><span class="op">.</span><span class="nam">get_course</span><span class="op">(</span><span class="nam">course_id</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t777" href="#t777">777</a></span><span class="t">        <span class="key">if</span> <span class="key">not</span> <span class="nam">course</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t778" href="#t778">778</a></span><span class="t">            <span class="key">raise</span> <span class="nam">ValueError</span><span class="op">(</span><span class="str">f"Curso no encontrado con ID: {course_id}"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t779" href="#t779">779</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t780" href="#t780">780</a></span><span class="t">        <span class="key">if</span> <span class="nam">course</span><span class="op">.</span><span class="nam">owner</span> <span class="op">!=</span> <span class="nam">requester_id</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t781" href="#t781">781</a></span><span class="t">            <span class="key">raise</span> <span class="nam">ValueError</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t782" href="#t782">782</a></span><span class="t">                <span class="str">"Only the main professor can update auxiliary teacher permissions"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t783" href="#t783">783</a></span><span class="t">            <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t784" href="#t784">784</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t785" href="#t785">785</a></span><span class="t">        <span class="nam">is_auxiliary</span> <span class="op">=</span> <span class="key">False</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t786" href="#t786">786</a></span><span class="t">        <span class="nam">aux_index</span> <span class="op">=</span> <span class="op">-</span><span class="num">1</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t787" href="#t787">787</a></span><span class="t">        <span class="key">for</span> <span class="nam">i</span><span class="op">,</span> <span class="nam">aux_teacher</span> <span class="key">in</span> <span class="nam">enumerate</span><span class="op">(</span><span class="nam">course</span><span class="op">.</span><span class="nam">auxiliary_teachers</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t788" href="#t788">788</a></span><span class="t">            <span class="key">if</span> <span class="nam">aux_teacher</span><span class="op">.</span><span class="nam">teacher_id</span> <span class="op">==</span> <span class="nam">teacher_id</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t789" href="#t789">789</a></span><span class="t">                <span class="nam">is_auxiliary</span> <span class="op">=</span> <span class="key">True</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t790" href="#t790">790</a></span><span class="t">                <span class="nam">aux_index</span> <span class="op">=</span> <span class="nam">i</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t791" href="#t791">791</a></span><span class="t">                <span class="key">break</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t792" href="#t792">792</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t793" href="#t793">793</a></span><span class="t">        <span class="key">if</span> <span class="key">not</span> <span class="nam">is_auxiliary</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t794" href="#t794">794</a></span><span class="t">            <span class="key">raise</span> <span class="nam">ValueError</span><span class="op">(</span><span class="str">"Este usuario no es profesor auxiliar en este curso"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t795" href="#t795">795</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t796" href="#t796">796</a></span><span class="t">        <span class="key">from</span> <span class="nam">app</span><span class="op">.</span><span class="nam">models</span><span class="op">.</span><span class="nam">course</span> <span class="key">import</span> <span class="nam">AuxiliaryTeacher</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t797" href="#t797">797</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t798" href="#t798">798</a></span><span class="t">        <span class="nam">updated_auxiliaries</span> <span class="op">=</span> <span class="nam">course</span><span class="op">.</span><span class="nam">auxiliary_teachers</span><span class="op">.</span><span class="nam">copy</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t799" href="#t799">799</a></span><span class="t">        <span class="nam">updated_auxiliaries</span><span class="op">[</span><span class="nam">aux_index</span><span class="op">]</span> <span class="op">=</span> <span class="nam">AuxiliaryTeacher</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t800" href="#t800">800</a></span><span class="t">            <span class="nam">teacher_id</span><span class="op">=</span><span class="nam">teacher_id</span><span class="op">,</span> <span class="nam">permissions</span><span class="op">=</span><span class="nam">permissions</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t801" href="#t801">801</a></span><span class="t">        <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t802" href="#t802">802</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t803" href="#t803">803</a></span><span class="t">        <span class="key">from</span> <span class="nam">app</span><span class="op">.</span><span class="nam">models</span><span class="op">.</span><span class="nam">course</span> <span class="key">import</span> <span class="nam">CourseUpdate</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t804" href="#t804">804</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t805" href="#t805">805</a></span><span class="t">        <span class="nam">course_update</span> <span class="op">=</span> <span class="nam">CourseUpdate</span><span class="op">(</span><span class="nam">auxiliary_teachers</span><span class="op">=</span><span class="nam">updated_auxiliaries</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t806" href="#t806">806</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t807" href="#t807">807</a></span><span class="t">        <span class="nam">updated_course</span> <span class="op">=</span> <span class="key">await</span> <span class="nam">self</span><span class="op">.</span><span class="nam">repository</span><span class="op">.</span><span class="nam">update_course</span><span class="op">(</span><span class="nam">course_id</span><span class="op">,</span> <span class="nam">course_update</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t808" href="#t808">808</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t809" href="#t809">809</a></span><span class="t">        <span class="key">if</span> <span class="nam">updated_course</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t810" href="#t810">810</a></span><span class="t">            <span class="nam">description</span> <span class="op">=</span> <span class="str">f"Main professor updated permissions for auxiliary teacher with ID {teacher_id}"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t811" href="#t811">811</a></span><span class="t">            <span class="key">await</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_add_log_entry</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t812" href="#t812">812</a></span><span class="t">                <span class="nam">course_id</span><span class="op">=</span><span class="nam">course_id</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t813" href="#t813">813</a></span><span class="t">                <span class="nam">teacher_id</span><span class="op">=</span><span class="nam">requester_id</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t814" href="#t814">814</a></span><span class="t">                <span class="nam">action</span><span class="op">=</span><span class="str">"update_auxiliary_teacher_permissions"</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t815" href="#t815">815</a></span><span class="t">                <span class="nam">element_id</span><span class="op">=</span><span class="nam">str</span><span class="op">(</span><span class="nam">teacher_id</span><span class="op">)</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t816" href="#t816">816</a></span><span class="t">                <span class="nam">description</span><span class="op">=</span><span class="nam">description</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t817" href="#t817">817</a></span><span class="t">            <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t818" href="#t818">818</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t819" href="#t819">819</a></span><span class="t">        <span class="key">return</span> <span class="nam">updated_course</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t820" href="#t820">820</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t821" href="#t821">821</a></span><span class="t">    <span class="key">async</span> <span class="key">def</span> <span class="nam">get_auxiliary_teacher_permissions</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t822" href="#t822">822</a></span><span class="t">        <span class="nam">self</span><span class="op">,</span> <span class="nam">course_id</span><span class="op">:</span> <span class="nam">str</span><span class="op">,</span> <span class="nam">teacher_id</span><span class="op">:</span> <span class="nam">int</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t823" href="#t823">823</a></span><span class="t">    <span class="op">)</span> <span class="op">-></span> <span class="nam">Optional</span><span class="op">[</span><span class="nam">dict</span><span class="op">]</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t824" href="#t824">824</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t825" href="#t825">825</a></span><span class="t">        <span class="nam">course</span> <span class="op">=</span> <span class="key">await</span> <span class="nam">self</span><span class="op">.</span><span class="nam">repository</span><span class="op">.</span><span class="nam">get_course</span><span class="op">(</span><span class="nam">course_id</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t826" href="#t826">826</a></span><span class="t">        <span class="key">if</span> <span class="key">not</span> <span class="nam">course</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t827" href="#t827">827</a></span><span class="t">            <span class="key">raise</span> <span class="nam">ValueError</span><span class="op">(</span><span class="str">f"Curso no encontrado con ID: {course_id}"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t828" href="#t828">828</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t829" href="#t829">829</a></span><span class="t">        <span class="key">for</span> <span class="nam">aux_teacher</span> <span class="key">in</span> <span class="nam">course</span><span class="op">.</span><span class="nam">auxiliary_teachers</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t830" href="#t830">830</a></span><span class="t">            <span class="key">if</span> <span class="nam">aux_teacher</span><span class="op">.</span><span class="nam">teacher_id</span> <span class="op">==</span> <span class="nam">teacher_id</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t831" href="#t831">831</a></span><span class="t">                <span class="key">return</span> <span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t832" href="#t832">832</a></span><span class="t">                    <span class="nam">aux_teacher</span><span class="op">.</span><span class="nam">permissions</span><span class="op">.</span><span class="nam">model_dump</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t833" href="#t833">833</a></span><span class="t">                    <span class="key">if</span> <span class="nam">aux_teacher</span><span class="op">.</span><span class="nam">permissions</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t834" href="#t834">834</a></span><span class="t">                    <span class="key">else</span> <span class="op">{</span><span class="op">}</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t835" href="#t835">835</a></span><span class="t">                <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t836" href="#t836">836</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t837" href="#t837">837</a></span><span class="t">        <span class="key">raise</span> <span class="nam">ValueError</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t838" href="#t838">838</a></span><span class="t">            <span class="str">f"El profesor con ID {teacher_id} no es auxiliar en este curso"</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t839" href="#t839">839</a></span><span class="t">        <span class="op">)</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
     <div class="content">
@@ -859,7 +928,7 @@
             <a class="nav" href="index.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.9.1">coverage.py v7.9.1</a>,
-            created at 2025-06-22 00:26 +0000
+            created at 2025-06-22 01:45 +0000
         </p>
     </div>
 </footer>
